@@ -18,10 +18,10 @@ var MessageView = {
   renderBold: _.template(
     '<div class="chat">' +
       '<div class="username">' +
-      '<b><%= username %></b>' +
+      '<%= username %>' +
       '</div>' +
       '<div>' +
-      '<%= text %>' +
+      '<b><%= text %></b>' +
       '</div>' +
     '</div>'
   )
