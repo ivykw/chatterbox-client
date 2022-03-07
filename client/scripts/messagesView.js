@@ -28,8 +28,15 @@ var MessagesView = {
 
   renderMessage: function(message) {
     // TODO: Render a single message.
-    let $newMessage = $(MessageView.render(message));
+    let $newMessage;
     $newMessage.on('click', MessagesView.handleClick);
+    for (let key in Friends._data) {
+      if (Friends._data[key] === true) {
+        $newMessage = $(MessageView.boldRender(message));
+      } else {
+        $newMessage = $(MessageView.render(message));
+      }
+    }
     MessagesView.$chats.append($newMessage);
   },
 
